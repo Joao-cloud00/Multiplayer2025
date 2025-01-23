@@ -7,9 +7,11 @@ public class Card : MonoBehaviour
     private bool isSelected = false;
     private CardSlot currentSlot;
 
-    // Atributos de vida e dano
+    // Atributos de vida, dano e estado
     public int health = 10;
     public int damage = 5;
+    public bool isPlayerCard; // Identifica se é do jogador ou do adversário
+    public bool isOnTable = false; // Verifica se a carta está na mesa
 
     void Update()
     {
@@ -21,7 +23,7 @@ public class Card : MonoBehaviour
             if (hit.collider != null)
             {
                 CardSlot slot = hit.collider.GetComponent<CardSlot>();
-                if (slot != null)
+                if (slot != null && !isOnTable) // Permite colocar a carta na mesa
                 {
                     // Se já está em um slot, remove a carta do slot anterior
                     if (currentSlot != null)
@@ -32,6 +34,7 @@ public class Card : MonoBehaviour
                     // Coloca a carta no novo slot
                     slot.PlaceCard(gameObject);
                     currentSlot = slot; // Atualiza o slot atual
+                    isOnTable = true; // Marca a carta como estando na mesa
                     isSelected = false; // Cancela a seleção
                 }
             }
@@ -40,9 +43,28 @@ public class Card : MonoBehaviour
 
     private void OnMouseDown()
     {
-        // Seleciona a carta ao clicar
-        isSelected = true;
-        Debug.Log("Carta selecionada!");
+        // Quando a carta está na mesa, ela pode ser selecionada para atacar
+        if (isOnTable)
+        {
+            if (AttackSystem.Instance != null && AttackSystem.Instance.attackingCard != null)
+            {
+                // Realiza o ataque se a carta clicada for alvo
+                AttackSystem.Instance.PerformAttack(this);
+            }
+            else
+            {
+                // Seleciona a carta para atacar
+                isSelected = true;
+                Debug.Log("Carta selecionada!");
+                AttackSystem.Instance.SetAttackingCard(this);
+            }
+        }
+        else
+        {
+            // Quando não está na mesa, apenas permite a seleção para colocação
+            isSelected = true;
+            Debug.Log("Selecione um slot para colocar a carta na mesa.");
+        }
     }
 
     // Método para receber dano
@@ -73,3 +95,4 @@ public class Card : MonoBehaviour
         Destroy(gameObject);
     }
 }
+
