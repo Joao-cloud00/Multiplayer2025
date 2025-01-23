@@ -7,6 +7,10 @@ public class Card : MonoBehaviour
     private bool isSelected = false;
     private CardSlot currentSlot;
 
+    // Atributos de vida e dano
+    public int health = 10;
+    public int damage = 5;
+
     void Update()
     {
         if (isSelected && Input.GetMouseButtonDown(0)) // Detecta clique no espaço
@@ -39,5 +43,33 @@ public class Card : MonoBehaviour
         // Seleciona a carta ao clicar
         isSelected = true;
         Debug.Log("Carta selecionada!");
+    }
+
+    // Método para receber dano
+    public void TakeDamage(int amount)
+    {
+        health -= amount;
+        Debug.Log(gameObject.name + " recebeu " + amount + " de dano. Vida restante: " + health);
+
+        if (health <= 0)
+        {
+            DestroyCard();
+        }
+    }
+
+    // Método para destruir a carta
+    private void DestroyCard()
+    {
+        Debug.Log(gameObject.name + " foi destruída!");
+
+        // Libera o slot, se estiver em um
+        if (currentSlot != null)
+        {
+            currentSlot.RemoveCard(gameObject);
+            currentSlot = null;
+        }
+
+        // Destroi o objeto da carta
+        Destroy(gameObject);
     }
 }
