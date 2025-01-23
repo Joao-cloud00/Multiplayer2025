@@ -91,8 +91,16 @@ public class Card : MonoBehaviour
             currentSlot = null;
         }
 
-        // Destroi o objeto da carta
-        Destroy(gameObject);
+        if (!isPlayerCard)
+        {
+            GameManager.Instance.AddPlayerScore(); // Pontuação para o jogador
+            Destroy(gameObject);
+        }
+        else
+        {
+            GameManager.Instance.AddOpponentScore(); // Pontuação para o adversário
+            Destroy(gameObject);
+        }
     }
 }
 

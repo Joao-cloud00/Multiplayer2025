@@ -15,6 +15,7 @@ public class CardSlot : MonoBehaviour
             currentCard = card;
             card.transform.position = transform.position;
             isOccupied = true;
+            gameObject.SetActive(false);
         }
         else
         {
@@ -29,6 +30,7 @@ public class CardSlot : MonoBehaviour
         {
             currentCard = null;
             isOccupied = false;
+            gameObject.SetActive(true);
         }
     }
 }
