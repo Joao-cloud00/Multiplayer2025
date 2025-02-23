@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class _SceneManager : MonoBehaviour
 {
     public static _SceneManager Instance;
+    public GameObject _panelMenu;
+    public GameObject _panelCadastrar;
+    public GameObject _panelLogin;
+    public GameObject _btAvançar;
 
     // Start is called before the first frame update
     private void Awake()
@@ -53,5 +58,33 @@ public class _SceneManager : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Jogo fechado!");
+    }
+
+    //------------------ buttons menu -------------------//
+    public void AbrirCadastro()
+    {
+        _panelMenu.SetActive(false);
+        _panelCadastrar.SetActive(true);
+    }
+    public void AbrirLogin()
+    {
+        _panelMenu.SetActive(false);
+        _panelLogin.SetActive(true);
+    }
+    public void Fechar_cadastro()
+    {
+        _panelCadastrar.SetActive(false);
+        _panelMenu.SetActive(true);
+        
+    }
+    public void Fechar_login()
+    {
+        _panelLogin.SetActive(false);
+        _panelMenu.SetActive(true);
+
+    }
+    public void Bt_avançar()
+    {
+        _btAvançar.SetActive(true);
     }
 }
