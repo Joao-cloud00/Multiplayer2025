@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Card : MonoBehaviour
 {
@@ -12,9 +13,13 @@ public class Card : MonoBehaviour
     public int damage = 5;
     public bool isPlayerCard; // Identifica se é do jogador ou do adversário
     public bool isOnTable = false; // Verifica se a carta está na mesa
+    public Text txtLife;
 
     void Update()
     {
+        string life = health.ToString();
+        txtLife.text = life;
+
         if (isSelected && Input.GetMouseButtonDown(0)) // Detecta clique no espaço
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
