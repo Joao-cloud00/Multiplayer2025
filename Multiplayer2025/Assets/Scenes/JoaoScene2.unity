@@ -1442,8 +1442,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1067783415}
-  - component: {fileID: 1067783414}
-  - component: {fileID: 1067783416}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1451,19 +1449,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1067783414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1067783413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3818485b6db2a7d4bb6f9a736b3b8dd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackingCard: {fileID: 0}
 --- !u!4 &1067783415
 Transform:
   m_ObjectHideFlags: 0
@@ -1479,24 +1464,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1067783416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1067783413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddc87d441159cc74abaa143428774a62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerScore: 0
-  opponentScore: 0
-  maxScore: 3
-  playerScoreText: {fileID: 2041043247}
-  opponentScoreText: {fileID: 1426031899}
-  victoryMessageText: {fileID: 766530370}
 --- !u!1 &1087577429
 GameObject:
   m_ObjectHideFlags: 0
