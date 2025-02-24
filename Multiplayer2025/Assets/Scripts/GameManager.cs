@@ -46,11 +46,12 @@ public class GameManager : MonoBehaviour
             Deck_ScriptableObject selectedDeck = decks[selectedDeckIndex];
             Debug.Log("Deck carregado: " + selectedDeck.deckName);
 
-            // Instancia as cartas do deck nos slots (usando o script CardManager)
+            // Passa o deck escolhido para o CardManager
             CardManager cardManager = FindObjectOfType<CardManager>();
             if (cardManager != null)
             {
                 cardManager.SetDeck(selectedDeck);
+                cardManager.currentDeck = selectedDeck;
             }
             else
             {
@@ -61,7 +62,6 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("Índice de deck inválido.");
         }
-
     }
 
     /// <summary>
