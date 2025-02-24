@@ -6,6 +6,7 @@ public class CardSlot : MonoBehaviour
 {
     public bool isOccupied = false; // Indica se o slot está ocupado
     private GameObject currentCard; // Referência para a carta atual no slot
+    public bool isAttackSlot = false; // Define se este slot é o slot de ataque
 
     public void PlaceCard(GameObject card)
     {
@@ -15,7 +16,11 @@ public class CardSlot : MonoBehaviour
             currentCard = card;
             card.transform.position = transform.position;
             isOccupied = true;
-            gameObject.SetActive(false);
+
+            if (!isAttackSlot)
+            {
+                gameObject.SetActive(false); // Desativa o slot se for um slot de espera
+            }
         }
         else
         {
@@ -30,9 +35,11 @@ public class CardSlot : MonoBehaviour
         {
             currentCard = null;
             isOccupied = false;
-            gameObject.SetActive(true);
+
+            if (!isAttackSlot)
+            {
+                gameObject.SetActive(true); // Reativa o slot de espera ao remover a carta
+            }
         }
     }
 }
-
-

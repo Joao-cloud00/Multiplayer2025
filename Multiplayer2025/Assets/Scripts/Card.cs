@@ -7,6 +7,7 @@ public class Card : MonoBehaviour
 {
     private bool isSelected = false;
     private CardSlot currentSlot;
+    private bool isInWaitingSlot = false; // Nova variável para verificar se está no slot de espera
 
     // Atributos de vida, dano e estado
     public int health = 10;
@@ -28,19 +29,19 @@ public class Card : MonoBehaviour
             if (hit.collider != null)
             {
                 CardSlot slot = hit.collider.GetComponent<CardSlot>();
-                if (slot != null && !isOnTable) // Permite colocar a carta na mesa
+                if (slot != null)
                 {
-                    // Se já está em um slot, remove a carta do slot anterior
-                    if (currentSlot != null)
+                    if (!isInWaitingSlot) // Se ainda não está no slot de espera
                     {
-                        currentSlot.RemoveCard(gameObject);
+                        if(slot != slot.isAttackSlot)
+                        {
+                            MoveToWaitingSlot(slot);
+                        }
                     }
-
-                    // Coloca a carta no novo slot
-                    slot.PlaceCard(gameObject);
-                    currentSlot = slot; // Atualiza o slot atual
-                    isOnTable = true; // Marca a carta como estando na mesa
-                    isSelected = false; // Cancela a seleção
+                    else if (!isOnTable) // Se já está no slot de espera, pode ir para o slot de ataque
+                    {
+                        MoveToAttackSlot(slot);
+                    }
                 }
             }
         }
@@ -70,6 +71,30 @@ public class Card : MonoBehaviour
             isSelected = true;
             Debug.Log("Selecione um slot para colocar a carta na mesa.");
         }
+    }
+
+    private void MoveToWaitingSlot(CardSlot slot)
+    {
+        if (currentSlot != null)
+        {
+            currentSlot.RemoveCard(gameObject);
+        }
+        slot.PlaceCard(gameObject);
+        currentSlot = slot;
+        isInWaitingSlot = true;
+        isSelected = false;
+    }
+
+    private void MoveToAttackSlot(CardSlot slot)
+    {
+            if (currentSlot != null)
+            {
+                currentSlot.RemoveCard(gameObject);
+            }
+            slot.PlaceCard(gameObject);
+            currentSlot = slot;
+            isOnTable = true;
+            isSelected = false;
     }
 
     // Método para receber dano
@@ -108,4 +133,3 @@ public class Card : MonoBehaviour
         }
     }
 }
-
