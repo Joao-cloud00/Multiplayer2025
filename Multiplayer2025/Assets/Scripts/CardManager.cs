@@ -28,13 +28,14 @@ public class CardManager : MonoBehaviour
         // Verifica se há slots disponíveis
         foreach (GameObject slot in slots)
         {
-            if (slot.transform.childCount == 0) // Verifica se o slot está vazio
+            if (slot.GetComponent<Mao>().isTable != false) // Verifica se o slot está vazio
             {
                 // Escolhe uma carta aleatória do deck atual
                 GameObject randomCardPrefab = currentDeck.cards[Random.Range(0, currentDeck.cards.Count)];
 
                 // Instancia a carta no slot
                 GameObject cardInstance = Instantiate(randomCardPrefab, slot.transform.position, slot.transform.rotation);
+                slot.GetComponent<Mao>().isTable = false;
 
                 // Define o slot como pai da carta
                 cardInstance.transform.SetParent(slot.transform);

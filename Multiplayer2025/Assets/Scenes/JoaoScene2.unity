@@ -664,6 +664,7 @@ GameObject:
   m_Component:
   - component: {fileID: 363138871}
   - component: {fileID: 363138872}
+  - component: {fileID: 363138873}
   m_Layer: 0
   m_Name: mao2
   m_TagString: Untagged
@@ -738,6 +739,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &363138873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363138870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fe3294488faaa44cb385b655404399f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTable: 0
 --- !u!1 &408518506
 GameObject:
   m_ObjectHideFlags: 0
@@ -2364,6 +2378,7 @@ MonoBehaviour:
   - {fileID: 1087577429}
   - {fileID: 363138870}
   - {fileID: 1340704426}
+  currentDeck: {fileID: 0}
 --- !u!1 &1067783413
 GameObject:
   m_ObjectHideFlags: 0
@@ -2441,6 +2456,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1087577430}
   - component: {fileID: 1087577431}
+  - component: {fileID: 1087577432}
   m_Layer: 0
   m_Name: mao1
   m_TagString: Untagged
@@ -2515,6 +2531,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1087577432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087577429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fe3294488faaa44cb385b655404399f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTable: 0
 --- !u!1 &1131502440
 GameObject:
   m_ObjectHideFlags: 0
@@ -2875,6 +2904,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1340704427}
   - component: {fileID: 1340704428}
+  - component: {fileID: 1340704429}
   m_Layer: 0
   m_Name: mao3
   m_TagString: Untagged
@@ -2949,6 +2979,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1340704429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340704426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fe3294488faaa44cb385b655404399f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTable: 0
 --- !u!1 &1370738838
 GameObject:
   m_ObjectHideFlags: 0

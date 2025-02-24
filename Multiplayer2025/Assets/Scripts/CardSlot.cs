@@ -16,6 +16,7 @@ public class CardSlot : MonoBehaviour
             currentCard = card;
             card.transform.position = transform.position;
             isOccupied = true;
+            card.GetComponentInParent<Mao>().isTable = true;
 
             if (!isAttackSlot)
             {
