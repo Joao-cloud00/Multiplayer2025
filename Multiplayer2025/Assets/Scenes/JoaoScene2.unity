@@ -2390,6 +2390,7 @@ GameObject:
   - component: {fileID: 1067783415}
   - component: {fileID: 1067783417}
   - component: {fileID: 1067783416}
+  - component: {fileID: 1067783418}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2446,6 +2447,18 @@ MonoBehaviour:
   decks:
   - {fileID: 11400000, guid: 700e2ba027033c54cb41219f4b29c3c0, type: 2}
   - {fileID: 11400000, guid: 6b011fff76c98cf4e983708cd203cd37, type: 2}
+--- !u!114 &1067783418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067783413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d56cedcb28b66145b354dc581207da7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1087577429
 GameObject:
   m_ObjectHideFlags: 0

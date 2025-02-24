@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using TMPro;
-using UnityEditor.PackageManager;
 using UnityEngine.SceneManagement;
 
 public class LoginManager : MonoBehaviour
