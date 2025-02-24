@@ -632,9 +632,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 535772759}
-        m_TargetAssemblyTypeName: _SceneManager, Assembly-CSharp
-        m_MethodName: Bt_confirmar
+      - m_Target: {fileID: 1327136542}
+        m_TargetAssemblyTypeName: LoginManager, Assembly-CSharp
+        m_MethodName: Logar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -921,9 +921,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 535772759}
-        m_TargetAssemblyTypeName: _SceneManager, Assembly-CSharp
-        m_MethodName: Fechar_cadastro
+      - m_Target: {fileID: 1327136542}
+        m_TargetAssemblyTypeName: LoginManager, Assembly-CSharp
+        m_MethodName: Voltar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1572,7 +1572,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 391543027}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1327136542}
+        m_TargetAssemblyTypeName: LoginManager, Assembly-CSharp
+        m_MethodName: Registrar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &391543027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1694,9 +1706,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 535772759}
-        m_TargetAssemblyTypeName: _SceneManager, Assembly-CSharp
-        m_MethodName: AbrirLogin
+      - m_Target: {fileID: 1327136542}
+        m_TargetAssemblyTypeName: LoginManager, Assembly-CSharp
+        m_MethodName: IniciarLogar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1827,9 +1839,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 535772759}
-        m_TargetAssemblyTypeName: _SceneManager, Assembly-CSharp
-        m_MethodName: SelecionarDeck
+      - m_Target: {fileID: 1327136542}
+        m_TargetAssemblyTypeName: LoginManager, Assembly-CSharp
+        m_MethodName: "Avan\xE7ar"
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3260,6 +3272,70 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289083600}
   m_CullTransparentMesh: 1
+--- !u!1 &1327136540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1327136541}
+  - component: {fileID: 1327136542}
+  m_Layer: 0
+  m_Name: LoginManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1327136541
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327136540}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 90}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1327136542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327136540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9283d2c5139e56f4ea3ef9f15de2f741, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputNome:
+  - {fileID: 31427213}
+  inputUsuario:
+  - {fileID: 305883739}
+  - {fileID: 780507776}
+  inputSenha:
+  - {fileID: 41678744}
+  - {fileID: 1870217622}
+  - {fileID: 999449242}
+  mensagem:
+  - {fileID: 1603345660}
+  - {fileID: 1189057276}
+  panels:
+  - {fileID: 231459374}
+  - {fileID: 2122028266}
+  - {fileID: 1787081532}
+  botoes:
+  - {fileID: 1438884111}
+  - {fileID: 155061883}
+  - {fileID: 471598219}
 --- !u!1 &1438884111
 GameObject:
   m_ObjectHideFlags: 0
@@ -3476,9 +3552,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 535772759}
-        m_TargetAssemblyTypeName: _SceneManager, Assembly-CSharp
-        m_MethodName: AbrirCadastro
+      - m_Target: {fileID: 1327136542}
+        m_TargetAssemblyTypeName: LoginManager, Assembly-CSharp
+        m_MethodName: IniciarCadastro
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4978,3 +5054,4 @@ SceneRoots:
   - {fileID: 303488331}
   - {fileID: 1933780856}
   - {fileID: 535772760}
+  - {fileID: 1327136541}

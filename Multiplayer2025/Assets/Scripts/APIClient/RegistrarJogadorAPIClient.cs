@@ -10,7 +10,6 @@ public class RegistrarJogadorAPIClient : APIClient
     {
         string jsonData = JsonUtility.ToJson(jogador);
 
-        Debug.Log("JSON Enviado: " + jsonData);
         yield return SendRequest("/api/jogador/registrar", "POST", jsonData,
             onSuccess, onFailure);
     }

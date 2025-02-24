@@ -17,8 +17,11 @@ public class LoginAPIClient : APIClient
                 // A resposta deve ser convertida para um objeto Jogador
                 try
                 {
-                    var jogador = JsonUtility.FromJson<Jogador>(response);
-                    onSuccess?.Invoke(jogador);
+                    // Supondo que o retorno da API seja algo como { "mensagem": "Login bem-sucedido!", "jogadorId": 123 }
+                    var loginResponse = JsonUtility.FromJson<LoginResponse>(response);
+                    Jogador jogador = new Jogador { cod = loginResponse.jogadorId };
+
+                    onSuccess?.Invoke(jogador);  // Chama a função de sucesso com o jogador
                 }
                 catch (Exception ex)
                 {
@@ -26,5 +29,13 @@ public class LoginAPIClient : APIClient
                 }
             },
             onFailure);
+    }
+
+    // Classe para deserializar a resposta do login
+    [System.Serializable]
+    public class LoginResponse
+    {
+        public string mensagem;
+        public int jogadorId;  // Recebe o jogadorId da resposta
     }
 }
