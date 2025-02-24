@@ -25,17 +25,6 @@ public class _SceneManager : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void CarregarCena(string nomeCena)
     {
         SceneManager.LoadScene(nomeCena);
@@ -83,8 +72,13 @@ public class _SceneManager : MonoBehaviour
         _panelMenu.SetActive(true);
 
     }
-    public void Bt_avançar()
+    public void Bt_confirmar()
     {
         _btAvançar.SetActive(true);
+    }
+
+    public void SelecionarDeck()
+    {
+        SceneManager.LoadScene(1);
     }
 }
