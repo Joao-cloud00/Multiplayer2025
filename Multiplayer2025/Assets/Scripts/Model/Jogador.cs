@@ -1,14 +1,15 @@
-[System.Serializable]
+using System;
+using System.Collections.Generic;
 
+[Serializable]
 public class Jogador
 {
-    //public Jogador()
-    //{
-    //    this.baralhos = new List<Baralho>();
-    //}
-    public int cod;
-    public string nome;
-    public string usuario;
-    public string senha;
-    //public List<Baralho> baralhos { get; set; }
+    public int cod; // Código único do jogador
+    public string nome; // Nome do jogador
+    public string usuario; // Nome de usuário
+    public string senha; // Senha do jogador (com hash, já no servidor)
+
+    // Lista de baralhos, cada baralho contém uma lista de cartas
+
+    public List<List<string>> baralhos;
 }
